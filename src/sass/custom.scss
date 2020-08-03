@@ -28,6 +28,7 @@ body {
 }
 
 .newsContainer {
+  position: relative;
   padding: 5% 10%;
   width: 70%;
   background-color: #383838;
@@ -45,6 +46,7 @@ body {
 }
 
 .newsBlock {
+  background-color: #f9f9f9;
   display: flex;
   flex-direction: column;
   cursor: pointer;
@@ -58,7 +60,6 @@ body {
     width: 100%;
   }
   & .textCont {
-    background-color: #f9f9f9;
     color: #383838;
     padding: 10px 25px 25px 25px;
   }
@@ -75,6 +76,17 @@ body {
     opacity: 0.6;
     font-size: 18px;
   }
+}
+
+.fullView {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.hideMe {
+  display: none;
 }
 
 .quickLinksCont {

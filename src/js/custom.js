@@ -6,7 +6,7 @@ var axios = require('axios');
 
 	// import Vue from 'vue/dist/vue.js';
 
-	console.log('hello')
+	// console.log('hello')
 
 	let app = new Vue ({
 		el: '#app',
@@ -17,18 +17,30 @@ var axios = require('axios');
 
 
 	function axiosCall () {
-		alert('working')
-		console.log('working')
+		// alert('working')
+		console.log('working');
 		axios({
 			method: 'get',
 			url: 'http://newsapi.org/v2/top-headlines?' + 'country=us&' + 'apiKey=0ec38d938d324e70a359a09a2ff04048'
 		})
 		.then(function (response){
-			app.topHeadlines = response
-			console.log(app.topHeadlines)
+			app.topHeadlines = response;
 		});
 	}
 
-	axiosCall()
+	axiosCall();
+
+	let newsBlocks = document.getElementsByClassName('newsBlock');
+
+	// console.log(newsBlocks)
+
+	for (var i = 0; i < newsBlocks.length; i++) {
+		// newsBlocks[i].addEventListener('click', newsFullView)
+		console.log('heeeeeelo');
+	}
+
+	// function newsFullView () {
+	// 	console.log('working')
+	// }
 
 })(); // iffe ENDS
