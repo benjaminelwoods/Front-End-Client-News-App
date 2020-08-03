@@ -3,12 +3,74 @@
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/custom.min.css">
+	<link rel="stylesheet" href="dist/css/custom.min.css">
 	<title>Project</title>
 </head>
 <body>
-	<script src="js/bundle.js"></script>
-	<h1>Hello World</h1>
 
+	<div id="app" v-if="topHeadlines">
+		<!-- start of app -->
+		<div class="container">
+			<div class="newsContainer">
+
+				<div class="quickLinksCont">
+					<h4>New Zealand</h4>
+					<h4>United Kingdom</h4>
+					<h4>Australia</h4>
+					<h4>New Zealand</h4>
+				</div>
+
+			<div class="newsBlock">
+				<img v-bind:src="topHeadlines.data.articles[0].urlToImage" alt="">
+				<div class="textCont">
+					<h3>{{topHeadlines.data.articles[0].author}} <span class="date">{{topHeadlines.data.articles[0].publishedAt}}</span></h3>
+					<h2>{{topHeadlines.data.articles[0].title}}</h2>
+				</div>
+			</div>
+
+			<div class="newsBlock">
+				<img v-bind:src="topHeadlines.data.articles[1].urlToImage" alt="">
+				<div class="textCont">
+					<h3>{{topHeadlines.data.articles[1].author}} <span class="date">{{topHeadlines.data.articles[1].publishedAt}}</span></h3>
+					<h2>{{topHeadlines.data.articles[1].title}}</h2>
+				</div>
+			</div>
+
+			<div class="newsBlock">
+				<img v-bind:src="topHeadlines.data.articles[2].urlToImage" alt="">
+				<div class="textCont">
+					<h3>{{topHeadlines.data.articles[2].author}} <span class="date">{{topHeadlines.data.articles[2].publishedAt}}</span></h3>
+					<h2>{{topHeadlines.data.articles[2].title}}</h2>
+				</div>
+			</div>
+
+			<div class="newsBlock">
+				<img v-bind:src="topHeadlines.data.articles[3].urlToImage" alt="">
+				<div class="textCont">
+					<h3>{{topHeadlines.data.articles[3].author}} <span class="date">{{topHeadlines.data.articles[3].publishedAt}}</span></h3>
+					<h2>{{topHeadlines.data.articles[3].title}}</h2>
+				</div>
+			</div>
+
+			<div class="newsBlock">
+				<img v-bind:src="topHeadlines.data.articles[4].urlToImage" alt="">
+				<div class="textCont">
+					<h3>{{topHeadlines.data.articles[4].author}} <span class="date">{{topHeadlines.data.articles[4].publishedAt}}</span></h3>
+					<h2>{{topHeadlines.data.articles[4].title}}</h2>
+				</div>
+			</div>
+
+		</div>
+		<div class="sidebar">
+			<h3> hello </h3>
+		</div>
+	</div>
+		<!-- end of app -->
+	</div>
+
+	<!-- Scripts -->
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+	<!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+	<script src="dist/js/bundle.js"></script>
 </body>
 </html>
