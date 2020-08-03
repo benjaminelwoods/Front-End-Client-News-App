@@ -1,8 +1,6 @@
 // custom js file
+function(){
 
-(function(){
-
-	alert('working');
 
 
 
