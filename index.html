@@ -20,7 +20,9 @@
 					<h4>New Zealand</h4>
 				</div>
 
-			<div class="newsBlock fullView">
+			<div id="backButton" class="hideBtn" v-on:click="normalView()"></div>
+
+			<div class="newsBlock" v-on:click="articleFullView(0)">
 				<img v-bind:src="topHeadlines.data.articles[0].urlToImage">
 				<div class="textCont">
 					<h3>{{topHeadlines.data.articles[0].author}} <span class="date">{{topHeadlines.data.articles[0].publishedAt}}</span></h3>
@@ -29,35 +31,39 @@
 				</div>
 			</div>
 
-			<div class="newsBlock hideMe">
+			<div class="newsBlock" v-on:click="articleFullView(1)">
 				<img v-bind:src="topHeadlines.data.articles[1].urlToImage">
 				<div class="textCont">
 					<h3>{{topHeadlines.data.articles[1].author}} <span class="date">{{topHeadlines.data.articles[1].publishedAt}}</span></h3>
 					<h2>{{topHeadlines.data.articles[1].title}}</h2>
+					<p class="article">{{topHeadlines.data.articles[1].description}}</p>
 				</div>
 			</div>
 
-			<div class="newsBlock hideMe">
+			<div class="newsBlock" v-on:click="articleFullView(2)">
 				<img v-bind:src="topHeadlines.data.articles[2].urlToImage">
 				<div class="textCont">
 					<h3>{{topHeadlines.data.articles[2].author}} <span class="date">{{topHeadlines.data.articles[2].publishedAt}}</span></h3>
 					<h2>{{topHeadlines.data.articles[2].title}}</h2>
+					<p class="article">{{topHeadlines.data.articles[2].description}}</p>
 				</div>
 			</div>
 
-			<div class="newsBlock hideMe">
+			<div class="newsBlock" v-on:click="articleFullView(3)">
 				<img v-bind:src="topHeadlines.data.articles[3].urlToImage">
 				<div class="textCont">
 					<h3>{{topHeadlines.data.articles[3].author}} <span class="date">{{topHeadlines.data.articles[3].publishedAt}}</span></h3>
 					<h2>{{topHeadlines.data.articles[3].title}}</h2>
+					<p class="article">{{topHeadlines.data.articles[3].description}}</p>
 				</div>
 			</div>
 
-			<div class="newsBlock hideMe">
+			<div class="newsBlock" v-on:click="articleFullView(4)">
 				<img v-bind:src="topHeadlines.data.articles[4].urlToImage">
 				<div class="textCont">
 					<h3>{{topHeadlines.data.articles[4].author}} <span class="date">{{topHeadlines.data.articles[4].publishedAt}}</span></h3>
 					<h2>{{topHeadlines.data.articles[4].title}}</h2>
+					<p class="article">{{topHeadlines.data.articles[4].description}}</p>
 				</div>
 			</div>
 

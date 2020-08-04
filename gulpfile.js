@@ -30,7 +30,7 @@ gulp.task('styles', function() {
       .pipe(browserSync.stream());
 });
 
-// HTML Task for html changes 
+// HTML Task for html changes
 gulp.task('html', function() {
     return gulp.src('./*.html')
      .pipe(browserSync.stream());
@@ -41,7 +41,7 @@ gulp.task('lint', function(){
     return gulp.src('src/js/*.js')
      .pipe(jshint())
        .pipe(jshint.reporter('default'))
-       .pipe(browserSync.stream());
+       // .pipe(browserSync.stream());
 });
 
 // For all webpack work for modules and imports/require
@@ -56,7 +56,7 @@ gulp.task('webpack', function() {
 // Watch task to watch for file changes
 gulp.task('watch', function(){
     gulp.watch('src/sass/**/*.scss', gulp.series('styles'));
-    gulp.watch('./*.html', gulp.series('html')); 
+    gulp.watch('./*.html', gulp.series('html'));
     gulp.watch('src/js/*.js', gulp.series('lint'));
     gulp.watch('src/js/*.js', gulp.series('webpack'));
 });
