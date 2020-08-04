@@ -79,14 +79,71 @@ body {
 }
 
 .fullView {
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative;
+    pointer-events: none;
+    z-index: 1;
+    animation: expandArticle 0.4s ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes expandArticle {
+  0% {
+    top: 0%;
+    left: 0%;
     width: 100%;
+  }
+  100% {
+    top: -18%;
+    left: -20%;
+    width: 140%;
+  }
+}
+
+//
+
+.hideBtn {
+  display: none;
 }
 
 .hideMe {
   display: none;
+}
+
+.hideAnim {
+  animation: closeArticle 0.4s ease;
+  animation-fill-mode: forwards;
+}
+
+.article {
+  display: none;
+  font-size: 22px;
+}
+
+.showArticle {
+  display: block;
+}
+
+@keyframes closeArticle {
+  0% {
+    top: -18%;
+    left: -20%;
+    width: 140%;
+  }
+  100% {
+    top: 0%;
+    left: 0%;
+    width: 100%;
+  }
+}
+
+#backButton {
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  background-color: red;
+  padding: 2%;
+  cursor: pointer;
 }
 
 .quickLinksCont {
