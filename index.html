@@ -14,46 +14,47 @@
 			<div class="newsContainer">
 
 				<div class="quickLinksCont">
-					<h4 button v-on:click='countryCode = nz'>New Zealand</h4>
-					<!-- <h4 button v-on:click='UkArticleSelector'>United Kingdom</h4>
-					<h4 button v-on:click='AusArticleSelector'>Australia</h4> -->
+					<h4>New Zealand</h4>
+					<h4>United Kingdom</h4>
+					<h4>Australia</h4>
 					<h4>New Zealand</h4>
 				</div>
 
-			<div class="newsBlock">
-				<img v-bind:src="topHeadlines.data.articles[0].urlToImage" alt="">
+			<div class="newsBlock fullView">
+				<img v-bind:src="topHeadlines.data.articles[0].urlToImage">
 				<div class="textCont">
 					<h3>{{topHeadlines.data.articles[0].author}} <span class="date">{{topHeadlines.data.articles[0].publishedAt}}</span></h3>
 					<h2>{{topHeadlines.data.articles[0].title}}</h2>
+					<p class="article">{{topHeadlines.data.articles[0].description}}</p>
 				</div>
 			</div>
 
-			<div class="newsBlock">
-				<img v-bind:src="topHeadlines.data.articles[1].urlToImage" alt="">
+			<div class="newsBlock hideMe">
+				<img v-bind:src="topHeadlines.data.articles[1].urlToImage">
 				<div class="textCont">
 					<h3>{{topHeadlines.data.articles[1].author}} <span class="date">{{topHeadlines.data.articles[1].publishedAt}}</span></h3>
 					<h2>{{topHeadlines.data.articles[1].title}}</h2>
 				</div>
 			</div>
 
-			<div class="newsBlock">
-				<img v-bind:src="topHeadlines.data.articles[2].urlToImage" alt="">
+			<div class="newsBlock hideMe">
+				<img v-bind:src="topHeadlines.data.articles[2].urlToImage">
 				<div class="textCont">
 					<h3>{{topHeadlines.data.articles[2].author}} <span class="date">{{topHeadlines.data.articles[2].publishedAt}}</span></h3>
 					<h2>{{topHeadlines.data.articles[2].title}}</h2>
 				</div>
 			</div>
 
-			<div class="newsBlock">
-				<img v-bind:src="topHeadlines.data.articles[3].urlToImage" alt="">
+			<div class="newsBlock hideMe">
+				<img v-bind:src="topHeadlines.data.articles[3].urlToImage">
 				<div class="textCont">
 					<h3>{{topHeadlines.data.articles[3].author}} <span class="date">{{topHeadlines.data.articles[3].publishedAt}}</span></h3>
 					<h2>{{topHeadlines.data.articles[3].title}}</h2>
 				</div>
 			</div>
 
-			<div class="newsBlock">
-				<img v-bind:src="topHeadlines.data.articles[4].urlToImage" alt="">
+			<div class="newsBlock hideMe">
+				<img v-bind:src="topHeadlines.data.articles[4].urlToImage">
 				<div class="textCont">
 					<h3>{{topHeadlines.data.articles[4].author}} <span class="date">{{topHeadlines.data.articles[4].publishedAt}}</span></h3>
 					<h2>{{topHeadlines.data.articles[4].title}}</h2>
