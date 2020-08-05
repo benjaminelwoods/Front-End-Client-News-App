@@ -6,7 +6,7 @@ var axios = require('axios');
 	let app = new Vue ({
 		el: '#app',
 		data: {
-			topHeadlines: false
+			newsData: false
 		},
 		methods: {
 			articleFullView: function (num) {
@@ -37,6 +37,18 @@ var axios = require('axios');
 					fullViewBlock[0].classList.remove('hideAnim');
 					fullViewBlock[0].classList.remove('fullView');
 				}, 400);
+			},
+			querySearch: function () {
+				let query = document.getElementById('searchInput').value
+				axios({
+					method: 'get',
+					url: 'http://newsapi.org/v2/top-headlines?' + 'q=' + query + '&' + 'apiKey=0ec38d938d324e70a359a09a2ff04048'
+				})
+				.then(function (response){
+					app.newsData = false;
+					app.newsData = response;
+					console.log(response)
+				});
 			}
 		}
 	});
@@ -45,32 +57,13 @@ var axios = require('axios');
 	function axiosCall () {
 		axios({
 			method: 'get',
-			url: 'http://newsapi.org/v2/top-headlines?' + 'country=us&' + 'apiKey=0ec38d938d324e70a359a09a2ff04048'
+			url: 'http://newsapi.org/v2/top-headlines?' + 'country=nz&' + 'apiKey=0ec38d938d324e70a359a09a2ff04048'
 		})
 		.then(function (response){
-			app.topHeadlines = response;
+			app.newsData = response;
 		});
 	}
 
 	axiosCall();
-
-
-
-	// console.log(newsBlocks)
-
-	// for (var i = 0; i < 5; i++) {
-	// 	console.log(i)
-	// }
-
-	// console.log(newsBlocks)
-
-	// for (var i = 0; i < 15; i++) {
-	// 	// newsBlocks[i].addEventListener('click', newsFullView)
-	// 	console.log('heeeeeelo');
-	// }
-
-	// function newsFullView () {
-	// 	console.log('working')
-	// }
 
 })(); // iffe ENDS
