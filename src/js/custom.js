@@ -6,9 +6,68 @@ var axios = require('axios');
 	let app = new Vue ({
 		el: '#app',
 		data: {
-			topHeadlines: false
+			topHeadlines: false,
+			country: 'us',
+			catagory: 'business',
 		},
 		methods: {
+			 // categorising Articles by Country
+			nzArticleSelector: function () {
+				app.country = 'nz'
+				axiosCall();
+			},
+
+			ukArticleSelector: function () {
+				app.country = 'gb'
+				axiosCall();
+			},
+
+			auArticleSelector: function () {
+				app.country = 'au'
+				axiosCall();
+			},
+
+			caArticleSelector: function () {
+				app.country = 'ca'
+				axiosCall();
+			},
+			// categorising Articles by Topic
+
+			business: function () {
+				app.catagory = 'business'
+				axiosCall();
+			},
+
+			entertainment: function () {
+				app.catagory = 'entertainment'
+				axiosCall();
+			},
+
+			general: function () {
+				app.catagory = 'general'
+				axiosCall();
+			},
+
+			health: function () {
+				app.catagory = 'health'
+				axiosCall();
+			},
+
+			science: function () {
+				app.catagory = 'science'
+				axiosCall();
+			},
+
+			sports: function () {
+				app.catagory = 'sports'
+				axiosCall();
+			},
+
+			technology: function () {
+				app.catagory = 'technology'
+				axiosCall();
+			},
+
 			articleFullView: function (num) {
 				const backBtn = document.getElementById('backButton');
 				let newsBlocks = document.getElementsByClassName('newsBlock');
@@ -45,10 +104,11 @@ var axios = require('axios');
 	function axiosCall () {
 		axios({
 			method: 'get',
-			url: 'http://newsapi.org/v2/top-headlines?' + 'country=us&' + 'apiKey=0ec38d938d324e70a359a09a2ff04048'
+			url: 'http://newsapi.org/v2/top-headlines?country=' + app.country + '&category=' + app.catagory + '&apiKey=0ec38d938d324e70a359a09a2ff04048'
 		})
 		.then(function (response){
 			app.topHeadlines = response;
+			console.log(response);
 		});
 	}
 
@@ -57,18 +117,18 @@ var axios = require('axios');
 
 
 	// console.log(newsBlocks)
-
+	//
 	// for (var i = 0; i < 5; i++) {
 	// 	console.log(i)
 	// }
-
+	//
 	// console.log(newsBlocks)
-
+	//
 	// for (var i = 0; i < 15; i++) {
 	// 	// newsBlocks[i].addEventListener('click', newsFullView)
 	// 	console.log('heeeeeelo');
 	// }
-
+	//
 	// function newsFullView () {
 	// 	console.log('working')
 	// }

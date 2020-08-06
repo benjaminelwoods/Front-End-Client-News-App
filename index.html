@@ -14,11 +14,24 @@
 			<div class="newsContainer">
 
 				<div class="quickLinksCont">
-					<h4>New Zealand</h4>
-					<h4>United Kingdom</h4>
-					<h4>Australia</h4>
-					<h4>New Zealand</h4>
+					<h4 button v-on:click="nzArticleSelector()">New Zealand</button></h4>
+					<h4 button v-on:click="ukArticleSelector()">United Kingdom</button></h4>
+					<h4 button v-on:click="auArticleSelector()">Australia</button></h4>
+					<h4 button v-on:click="caArticleSelector()">Canada</button></h4>
 				</div>
+
+				<div class="dropdown">
+					<button class="dropbtn">Dropdown</button>
+					<div class="dropdown-content">
+    			<a class="dropdown-item" @click="business()">Business</a>
+    			<a class="dropdown-item" @click="entertainment()">Entertainment</a>
+					<a class="dropdown-item" @click="general()">General</a>
+					<a class="dropdown-item" @click="health()">Health</a>
+					<a class="dropdown-item" @click="science()">Science</a>
+					<a class="dropdown-item" @click="sports()">Sport</a>
+					<a class="dropdown-item" @click="technology()">Technology</a>
+				</div>
+			</div>
 
 			<div id="backButton" class="hideBtn" v-on:click="normalView()"></div>
 
