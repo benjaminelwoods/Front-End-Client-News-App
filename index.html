@@ -17,15 +17,21 @@
 				<h4>Australia</h4>
 				<h4>New Zealand</h4>
 			</div>
-			<div class="newsContainer">
+			<div id="newsContainer" class="newsContainer">
 
-			<div id="backButton" class="hideBtn" v-on:click="normalView()"></div>
+			<!-- <div id="backButton" class="hideBtn" v-on:click="normalView()"></div> -->
 
-			<div class="newsBlock" v-on:click="articleFullView(0)">
+			<!-- <ul>
+				<li v-for="articles in newsData.data" :key="articles.title">{{articles[0].title}}
+				</li>
+			</ul> -->
+			<!-- <component-article></component-article> -->
+
+			<!-- <div class="newsBlock" v-on:click="articleFullView(0)">
 				<img v-bind:src="newsData.data.articles[0].urlToImage">
 				<div class="textCont">
-					<h3>{{newsData.data.articles[0].author}} <span class="date">{{newsData.data.articles[0].publishedAt}}</span></h3>
 					<h2>{{newsData.data.articles[0].title}}</h2>
+					<h3>{{newsData.data.articles[0].author}} <span class="date">{{newsData.data.articles[0].publishedAt}}</span></h3>
 					<p class="article">{{newsData.data.articles[0].description}}</p>
 				</div>
 			</div>
@@ -33,8 +39,8 @@
 			<div class="newsBlock" v-on:click="articleFullView(1)">
 				<img v-bind:src="newsData.data.articles[1].urlToImage">
 				<div class="textCont">
-					<h3>{{newsData.data.articles[1].author}} <span class="date">{{newsData.data.articles[1].publishedAt}}</span></h3>
 					<h2>{{newsData.data.articles[1].title}}</h2>
+					<h3>{{newsData.data.articles[1].author}} <span class="date">{{newsData.data.articles[1].publishedAt}}</span></h3>
 					<p class="article">{{newsData.data.articles[1].description}}</p>
 				</div>
 			</div>
@@ -42,8 +48,8 @@
 			<div class="newsBlock" v-on:click="articleFullView(2)">
 				<img v-bind:src="newsData.data.articles[2].urlToImage">
 				<div class="textCont">
-					<h3>{{newsData.data.articles[2].author}} <span class="date">{{newsData.data.articles[2].publishedAt}}</span></h3>
 					<h2>{{newsData.data.articles[2].title}}</h2>
+					<h3>{{newsData.data.articles[2].author}} <span class="date">{{newsData.data.articles[2].publishedAt}}</span></h3>
 					<p class="article">{{newsData.data.articles[2].description}}</p>
 				</div>
 			</div>
@@ -51,8 +57,8 @@
 			<div class="newsBlock" v-on:click="articleFullView(3)">
 				<img v-bind:src="newsData.data.articles[3].urlToImage">
 				<div class="textCont">
-					<h3>{{newsData.data.articles[3].author}} <span class="date">{{newsData.data.articles[3].publishedAt}}</span></h3>
 					<h2>{{newsData.data.articles[3].title}}</h2>
+					<h3>{{newsData.data.articles[3].author}} <span class="date">{{newsData.data.articles[3].publishedAt}}</span></h3>
 					<p class="article">{{newsData.data.articles[3].description}}</p>
 				</div>
 			</div>
@@ -60,8 +66,8 @@
 			<div class="newsBlock" v-on:click="articleFullView(4)">
 				<img v-bind:src="newsData.data.articles[4].urlToImage">
 				<div class="textCont">
-					<h3>{{newsData.data.articles[4].author}} <span class="date">{{newsData.data.articles[4].publishedAt}}</span></h3>
 					<h2>{{newsData.data.articles[4].title}}</h2>
+					<h3>{{newsData.data.articles[4].author}} <span class="date">{{newsData.data.articles[4].publishedAt}}</span></h3>
 					<p class="article">{{newsData.data.articles[4].description}}</p>
 				</div>
 			</div>
@@ -69,8 +75,8 @@
 			<div class="newsBlock" v-on:click="articleFullView(5)">
 				<img v-bind:src="newsData.data.articles[5].urlToImage">
 				<div class="textCont">
-					<h3>{{newsData.data.articles[5].author}} <span class="date">{{newsData.data.articles[5].publishedAt}}</span></h3>
 					<h2>{{newsData.data.articles[5].title}}</h2>
+					<h3>{{newsData.data.articles[5].author}} <span class="date">{{newsData.data.articles[5].publishedAt}}</span></h3>
 					<p class="article">{{newsData.data.articles[5].description}}</p>
 				</div>
 			</div>
@@ -80,7 +86,7 @@
 			<input id="searchInput" v-on:keyup.enter="querySearch()" type="text" placeholder="Search..."></input>
 			<button type="button" name="button" v-on:click="querySearch()">Let's Go!</button>
 		</div>
-	</div>
+	</div> -->
 		<!-- end of app -->
 	</div>
 
