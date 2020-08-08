@@ -3,12 +3,14 @@ var axios = require('axios');
 
 (function(){
 
-	let booleans = {
-		articleOpen: false,
-		totalResults: false
-	};
+	let newsCont = document.getElementById('newsContainer');
 
-	let articleArr = [];
+	let dataObj = {
+		articleOpen: false,
+		totalResults: false,
+		country: 'us',
+		category: 'business'
+	};
 
 	let app = new Vue ({
 		el: '#app',
@@ -29,35 +31,56 @@ var axios = require('axios');
 					app.news = response.data.articles;
 					app.newsData = response;
 					app.$forceUpdate();
-
 				});
 			},
 			articleFullView: function (item) {
 				let newsBlocks = document.getElementsByClassName('newsBlock');
-				if (booleans.articleOpen == true) {
-					booleans.articleOpen = false;
+				if (dataObj.articleOpen == true) {
+					dataObj.articleOpen = false;
 					newsBlocks[item].lastChild.lastChild.classList.remove('showArticle');
-				} else if (booleans.articleOpen == false) {
-					booleans.articleOpen = true;
+				} else if (dataObj.articleOpen == false) {
+					dataObj.articleOpen = true;
 					newsBlocks[item].lastChild.lastChild.classList.add('showArticle');
 				}
+			},
+			// categorising Articles by Country
+			countrySelector: function (country) {
+				dataObj.country = country
+				axiosCall();
+			},
+			// categorising Articles by Topic
+			catagorySelector: function (catagory) {
+				dataObj.category = catagory
+				axiosCall();
 			}
 		}
 	});
 
+//   function getLocation () {
+//     if (navigator.geolocation) {
+//       // Getting the geolocation of the user and calling the updateData function
+//       navigator.geolocation.getCurrentPosition(testLoc)
+// 			return
+//     } else {
+//       console.log('not working')
+//     }
+//   }
+//
+// getLocation()
+//
+// function testLoc (position) {
+// 	console.log(position.coords.latitude)
+// 	console.log(position.coords.longitude)
+// }
+
 	function axiosCall () {
 		axios({
 			method: 'get',
-			url: 'http://newsapi.org/v2/top-headlines?' + 'country=us&' + 'apiKey=0ec38d938d324e70a359a09a2ff04048'
+			url: 'http://newsapi.org/v2/top-headlines?country=' + dataObj.country + '&category=' + dataObj.category + '&apiKey=0ec38d938d324e70a359a09a2ff04048'
 		})
 		.then(function (response){
-			if (response.data.totalResults > 20) {
-				booleans.totalResults = 20
-			} else {
-				booleans.totalResults = response.data.totalResults
-			}
 			app.newsData = response;
-			app.news = response.data.articles
+			app.news = response.data.articles;
 		});
 	}
 

@@ -4,31 +4,50 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="dist/css/custom.min.css">
-	<title>Project</title>
+	<title>News Application</title>
 </head>
 <body>
 
 	<div id="app" v-if="newsData">
 		<!-- start of app -->
+
+		<div class="quickLinksCont">
+			<h4 button v-on:click="countrySelector('nz')">New Zealand</button></h4>
+			<h4 button v-on:click="countrySelector('gb')">United Kingdom</button></h4>
+			<h4 button v-on:click="countrySelector('au')">Australia</button></h4>
+			<h4 button v-on:click="countrySelector('ca')">Canada</button></h4>
+		</div>
+
 		<div class="container">
 			<div id="newsContainer" class="newsContainer">
 
 				<div v-for="(item, index) in news" class="newsBlock" @click="articleFullView(index)">
-						<img v-bind:src="item.urlToImage">
-						<div class="textCont">
-							<h2>{{item.title}}</h2>
-							<h3>{{item.author}}</h3>
-							<p class="article">{{item.description}}</p>
-						</div>
+					<img v-bind:src="item.urlToImage">
+					<div class="textCont">
+						<h2>{{item.title}}</h2>
+						<h3>{{item.author}}</h3>
+						<p class="article">{{item.description}}</p>
 					</div>
+				</div>
 
-		<div class="sidebar">
-			<input id="searchInput" v-on:keyup.enter="searchApiCall($event.target.value)" type="text" placeholder="Search..."></input>
-			<button type="button" name="button" v-on:click="querySearch()">Let's Go!</button>
+			</div>
+			<div class="sidebar">
+				<input id="searchInput" v-on:keyup.enter="searchApiCall($event.target.value)" type="text" placeholder="Search..."></input>
+				<button type="button" name="button" v-on:click="querySearch()">Let's Go!</button>
+				<div class="dropdown-content">
+					<a class="dropdown-item" @click="catagorySelector('business')">Business</a>
+					<a class="dropdown-item" @click="catagorySelector('entertainment')">Entertainment</a>
+					<a class="dropdown-item" @click="catagorySelector('general')">General</a>
+					<a class="dropdown-item" @click="catagorySelector('health')">Health</a>
+					<a class="dropdown-item" @click="catagorySelector('science')">Science</a>
+					<a class="dropdown-item" @click="catagorySelector('sports')">Sport</a>
+					<a class="dropdown-item" @click="catagorySelector('technology')">Technology</a>
+				</div>
+			</div>
 		</div>
+
 		<!-- end of app -->
 	</div>
-
 	<!-- Scripts -->
 	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
 	<script src="dist/js/bundle.js"></script>
